@@ -15,7 +15,7 @@ class GoogleTran extends GoogleTranHelpers {
 	protected $detectpath;
 	protected $languagepath;
 
-	public function __construct($key, $host, $detectpath, $transpath, $languagepath){
+	public function __construct($key, $host, $detectpath, $languagepath){
 		$this->key = $key;
 		$this->detectpath = $detectpath;
 		$this->languagepath = $languagepath;
