@@ -13,13 +13,15 @@ class GoogleTran extends GoogleTranHelpers {
 	protected $http;
 	protected $host;
 	protected $detectpath;
+	protected $transpath;
 	protected $languagepath;
 
-	public function __construct($key, $host, $detectpath, $languagepath){
+	public function __construct($key, $host, $detectpath, $transpath, $languagepath){
 		$this->key = $key;
 		$this->detectpath = $detectpath;
 		$this->languagepath = $languagepath;
 		$this->host = $host;
+		$this->transpath = $transpath;
 		$this->http = $this->setupClient();
 	}
 
@@ -61,7 +63,7 @@ class GoogleTran extends GoogleTranHelpers {
 		
 		$this->http = $this->setupClient();
 
-		$response = $this->http->post("?key=".$this->key, $body);
+		$response = $this->http->post($this->transpath."?key=".$this->key, $body);
 
 	    $responseBody = $response->getBody();
 	    $decodedBodyJson = json_decode($responseBody, JSON_UNESCAPED_UNICODE);
