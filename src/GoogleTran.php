@@ -37,6 +37,8 @@ class GoogleTran extends GoogleTranHelpers {
 
 		if($concat){
 			$text_segments = explode($concatType,$query);
+		}else {
+			$text_segments = $query;
 		}
 
 		if(count($text_segments) > 1){
@@ -78,6 +80,8 @@ class GoogleTran extends GoogleTranHelpers {
 
 		if($concat){
 			$text_segments = explode($concatType,$query);
+		}else {
+			$text_segments = $query;
 		}
 
 		if(count($text_segments) > 1){
