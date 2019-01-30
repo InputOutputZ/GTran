@@ -36,6 +36,7 @@ class GoogleTranServiceProvider extends ServiceProvider
                 $app['config']['googletran.key'],
                 $app['config']['googletran.host'],
                 $app['config']['googletran.detectpath'],
+                $app['config']['googletran.transpath'],
                 $app['config']['googletran.languagepath']
             );
         });
