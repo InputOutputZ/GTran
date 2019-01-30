@@ -33,9 +33,11 @@ class GoogleTran extends GoogleTranHelpers {
 	}
 
 
-	public function translateText($query,$target,$source,$format,$model,$concat = false){
+	public function translateText($query,$target,$source,$format,$model,$concat = false,$concatType = false){
 
-		$text_segments = explode(",",$query);
+		if($concat){
+			$text_segments = explode($concatType,$query);
+		}
 
 		if(count($text_segments) > 1){
 			foreach($text_segments as $key => $segment){
@@ -71,10 +73,12 @@ class GoogleTran extends GoogleTranHelpers {
 	    return $decodedBodyJson;
 	}
 
-	public function detectTextInformation($query)
+	public function detectTextInformation($query,$concat = false,$concatType = false)
 	{
 
-		$text_segments = explode(",",$query);
+		if($concat){
+			$text_segments = explode($concatType,$query);
+		}
 
 		if(count($text_segments) > 1){
 			foreach($text_segments as $key => $segment){
