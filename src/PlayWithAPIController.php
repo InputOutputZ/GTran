@@ -10,7 +10,7 @@ class PlayWithAPIController
 {
 
     public function translateText(Request $request){
-        $result = AzureTran::translateText($request->query,$request->target,$request->source,$request->format,$request->model);
+        $result = GoogleTran::translateText($request->query,$request->target,$request->source,$request->format,$request->model);
         if (($request->ajax() && !$request->pjax()) || $request->wantsJson() || $request->js) {
             return response()->json($result,200);
         } else {
@@ -19,7 +19,7 @@ class PlayWithAPIController
     }
 
   public function detectText(Request $request){
-        $result = AzureTran::detectTextInformation($request->query);
+        $result = GoogleTran::detectTextInformation($request->query);
         if (($request->ajax() && !$request->pjax()) || $request->wantsJson() || $request->js) {
             return response()->json($result,200);
         } else {
@@ -28,7 +28,7 @@ class PlayWithAPIController
     }
 
     public function translationAvailable(Request $request){
-        $result = AzureTran::translationsAvailable($request->model,$request->locale);
+        $result = GoogleTran::translationsAvailable($request->model,$request->locale);
         if (($request->ajax() && !$request->pjax()) || $request->wantsJson() || $request->js) {
             return response()->json($result,200);
         } else {
