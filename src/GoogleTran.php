@@ -41,7 +41,7 @@ class GoogleTran extends GoogleTranHelpers {
 			$text_segments = $query;
 		}
 
-		if(count($text_segments) > 1){
+		if($concat && count($text_segments) > 1){
 			foreach($text_segments as $key => $segment){
 				if($concat){
 					$text_segments[$key] = $concat.iconv(mb_detect_encoding($segment, mb_detect_order(), true), "UTF-8", $segment);
@@ -84,7 +84,7 @@ class GoogleTran extends GoogleTranHelpers {
 			$text_segments = $query;
 		}
 
-		if(count($text_segments) > 1){
+		if($concat && count($text_segments) > 1){
 			foreach($text_segments as $key => $segment){
 				$text_segments[$key] = iconv(mb_detect_encoding($segment, mb_detect_order(), true), "UTF-8", $segment);
 			}
