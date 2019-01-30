@@ -169,8 +169,8 @@ GoogleTran::detectTextInformation($query);
 
 ## Available functions
 
-- detectTextInformation($query) (Returns detections object)
-- translateText($query,$target,$source,$format,$model,$concat = false) (Returns translations object)
+- detectTextInformation($query,$concat = false,$concatType = false) (Returns detections object)
+- translateText($query,$target,$source,$format,$model,$concat = false,$concatType = false) (Returns translations object)
 - translationsAvailable($model,$locale) (Returns languages object)
 
 ## About
