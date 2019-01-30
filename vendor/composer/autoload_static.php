@@ -23,6 +23,7 @@ class ComposerStaticInitdabe86c66b1838deb2cf7e664820c5f9
             'GuzzleHttp\\Psr7\\' => 16,
             'GuzzleHttp\\Promise\\' => 19,
             'GuzzleHttp\\' => 11,
+            'GoogleTran\\Translate\\' => 21,
         ),
     );
 
@@ -42,6 +43,10 @@ class ComposerStaticInitdabe86c66b1838deb2cf7e664820c5f9
         'GuzzleHttp\\' => 
         array (
             0 => __DIR__ . '/..' . '/guzzlehttp/guzzle/src',
+        ),
+        'GoogleTran\\Translate\\' => 
+        array (
+            0 => __DIR__ . '/../..' . '/src',
         ),
     );
 
