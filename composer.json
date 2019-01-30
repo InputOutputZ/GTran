@@ -1,0 +1,34 @@
+{
+    "name": "googletran/translate",
+    "description": "Making Google Cloud Translator API consumption easier in Laravel 5.7+.",
+    "keywords": ["google", "nmt", "pbmt","cloud","translate","detect","translator","api","version","2","easier","laravel","Cognitive","Services","transliterate","translation","language","languages"],
+    "homepage": "https://github.com/princezuk/GoogleTran",
+    "type": "library",
+    "require": {
+        "guzzlehttp/guzzle": "^6.3@dev"
+    },
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Zakaria Abushima",
+            "email": "hello@princez.uk",
+            "homepage": "http://princez.uk/"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "GoogleTran\\Translate\\": "src/"
+        }
+    },
+    "minimum-stability": "stable",
+    "extra": {
+        "laravel": {
+            "providers": [
+                "GoogleTran\\Translate\\GoogleTranServiceProvider"
+            ],
+            "aliases": {
+                "GoogleTran": "GoogleTran\\Translate\\Facades\\GoogleTran"
+            }
+        }
+    }
+}
