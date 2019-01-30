@@ -47,20 +47,20 @@ class GoogleTran extends GoogleTranHelpers {
 			}
 		}else {
 			if($concat){
-				$text_segments = $concat.iconv(mb_detect_encoding($query, mb_detect_order(), true), "UTF-8", $query);
+				$text_segments = [$concat.iconv(mb_detect_encoding($query, mb_detect_order(), true), "UTF-8", $query)];
 			}else {
-				$text_segments = iconv(mb_detect_encoding($query, mb_detect_order(), true), "UTF-8", $query);
+				$text_segments = [iconv(mb_detect_encoding($query, mb_detect_order(), true), "UTF-8", $query)];
 			}
 		}
 
 		$body = [
-	       'json' => array(['q' => $text_segments,
+	       'json' => array('q' => $text_segments,
 	   						'model' => $model,
 	   						'target' => $target,
 	   						'source' => $source,
-	   						'format' => $format])
+	   						'format' => $format)
 		];	
-		
+
 		$this->http = $this->setupClient();
 
 		$response = $this->http->post($this->transpath."?key=".$this->key, $body);
@@ -81,11 +81,11 @@ class GoogleTran extends GoogleTranHelpers {
 				$text_segments[$key] = iconv(mb_detect_encoding($segment, mb_detect_order(), true), "UTF-8", $segment);
 			}
 		}else {
-			$text_segments = iconv(mb_detect_encoding($query, mb_detect_order(), true), "UTF-8", $query);
+			$text_segments = [iconv(mb_detect_encoding($query, mb_detect_order(), true), "UTF-8", $query)];
 		}
 
 		$body = [
-	       'json' => array(['query' => $text_segments])
+	       'json' => array('q' => $text_segments)
 		];	
 
 		$this->http = $this->setupClient();
@@ -99,7 +99,6 @@ class GoogleTran extends GoogleTranHelpers {
 	}
 
 	public function translationsAvailable($model,$locale){
-
 		$this->http = $this->setupClient();
 		$response = $this->http->get($this->languagepath."?model=".$model."&target=".$locale."&key=".$this->key);
 	    $responseBody = $response->getBody();
