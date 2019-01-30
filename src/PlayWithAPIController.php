@@ -10,7 +10,7 @@ class PlayWithAPIController
 {
 
     public function translateText(Request $request){
-        $result = GoogleTran::translateText($request->query,$request->target,$request->source,$request->format,$request->model);
+        $result = GoogleTran::translateText($request->text,$request->target,$request->source,$request->format,$request->model);
         if (($request->ajax() && !$request->pjax()) || $request->wantsJson() || $request->js) {
             return response()->json($result,200);
         } else {
@@ -19,7 +19,7 @@ class PlayWithAPIController
     }
 
   public function detectText(Request $request){
-        $result = GoogleTran::detectTextInformation($request->query);
+        $result = GoogleTran::detectTextInformation($request->text);
         if (($request->ajax() && !$request->pjax()) || $request->wantsJson() || $request->js) {
             return response()->json($result,200);
         } else {
