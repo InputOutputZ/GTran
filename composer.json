@@ -5,7 +5,7 @@
     "homepage": "https://github.com/princezuk/GoogleTran",
     "type": "library",
     "require": {
-        "guzzlehttp/guzzle": "^6.3"
+        "guzzlehttp/guzzle": "^7.0"
     },
     "license": "MIT",
     "authors": [
