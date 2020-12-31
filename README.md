@@ -17,7 +17,7 @@ There are 3 files to have a look at so to understand how the integration works
 ### Required Packages
 
 ```php
-"guzzlehttp/guzzle": "^6.3",
+"guzzlehttp/guzzle": "^7.0.1",
 ```
 
 # Installation for Laravel 5.7+
