@@ -1,5 +1,5 @@
 # GoogleTran
-Making Cloud translation API version 2 consumption easier in Laravel 5.7+.
+Making Google Cloud translation API version 2 consumption easier in Laravel 5.7+.
 
 ### Through this integration you can do the following
 - Detect text information such as language code and script. Refer to GoogleTran@detectTextInformation.
