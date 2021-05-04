@@ -1,10 +1,10 @@
 <?php
 
-namespace  GoogleTran\Translate\Facades;
+namespace  GTran\Translate\Facades;
 
 use Illuminate\Support\Facades\Facade;
 
-class GoogleTran extends Facade
+class GTran extends Facade
 {
     /**
      * Get the registered name of the component.
@@ -13,6 +13,6 @@ class GoogleTran extends Facade
      */
     protected static function getFacadeAccessor()
     {
-        return 'googletranslate';
+        return 'gtran';
     }
 }

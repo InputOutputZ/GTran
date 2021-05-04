@@ -1,16 +1,16 @@
 <?php
 
-namespace GoogleTran\Translate;
+namespace GTran\Translate;
 
 use Illuminate\Http\Request;
 
-use GoogleTran;
+use GTran;
 
 class PlayWithAPIController 
 {
 
     public function translateText(Request $request){
-        $result = GoogleTran::translateText($request->text,$request->target,$request->source,$request->format,$request->model);
+        $result = GTran::translateText($request->text,$request->target,$request->source,$request->get('format'),$request->model);
         if (($request->ajax() && !$request->pjax()) || $request->wantsJson() || $request->js) {
             return response()->json($result,200);
         } else {
@@ -19,7 +19,7 @@ class PlayWithAPIController
     }
 
   public function detectText(Request $request){
-        $result = GoogleTran::detectTextInformation($request->text);
+        $result = GTran::detectTextInformation($request->text);
         if (($request->ajax() && !$request->pjax()) || $request->wantsJson() || $request->js) {
             return response()->json($result,200);
         } else {
@@ -28,7 +28,7 @@ class PlayWithAPIController
     }
 
     public function translationAvailable(Request $request){
-        $result = GoogleTran::translationsAvailable($request->model,$request->locale);
+        $result = GTran::translationsAvailable($request->model,$request->get('locale'));
         if (($request->ajax() && !$request->pjax()) || $request->wantsJson() || $request->js) {
             return response()->json($result,200);
         } else {

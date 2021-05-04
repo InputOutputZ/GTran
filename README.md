@@ -1,18 +1,19 @@
-# GoogleTran
-Making Google Cloud translation API version 2 consumption easier in Laravel 5.7+.
+# GTran
+Making Google Cloud translation API version 2 consumption easier in Laravel 5+.
 
 ### Through this integration you can do the following
-- Detect text information such as language code and script. Refer to GoogleTran@detectTextInformation.
-- Get translation of one or several text segments from one language to another. Refer to GoogleTran@translateText.
-- Request available languages for translation including list of languages code. Refer to GoogleTran@translationsAvailable.
+- Detect information about text such as language code and script. Refer to GTran@detectTextInformation.
+- Translates text from one language to another. Accepts String or concatenated Strings as translation query. Refer to GTran@translateText.
+- Translates text from one language to another. Accepts Array as translation query. Refer to GTran@translateTextWithoutConcat.
+- Request available languages for translation including list of languages code. Refer to GTran@translationsAvailable.
 
 ## Laravel Google Cloud Translator Integration
 
 There are 3 files to have a look at so to understand how the integration works
 
-- config/googletran.php (Configuration of API endpoints & authorization key)
+- config/gtran.php (Configuration of API endpoints & authorisation key)
 - routes.php (Configuring PlayWithAPIController routes)
-- GoogleTran\Translate\PlayWithAPIController (A Controller with on hand methods playing with the API endpoints)
+- GTran\Translate\PlayWithAPIController (A Controller with on hand methods playing with the API endpoints)
 
 ### Required Packages
 
@@ -20,12 +21,12 @@ There are 3 files to have a look at so to understand how the integration works
 "guzzlehttp/guzzle": "^7.0.1",
 ```
 
-# Installation for Laravel 5.7+
+# Installation for Laravel 5+. Tested on 8.40.
 
-- 1- Go to your laravel project root directory and get the package locally:-
+- 1- Go to your laravel project root directory and install the package locally:-
 
 ```php
-composer require "googletran/translate"
+composer require "gtran/translate"
 ```
 
 - 2- Install the service provider and load config as well as routes references:-
@@ -33,7 +34,7 @@ composer require "googletran/translate"
 ```php
 php artisan vendor:publish
 ```
-- 3- Choose "GoogleTran\Translate\GoogleTranServiceProvider" provider from the list via typing its index value.
+- 3- Choose "GTran\Translate\GTranServiceProvider" provider from the list via typing its index value.
 
 - 4- Go to env file and include at the bottom:-
 
@@ -44,24 +45,24 @@ GOOGLETRAN_KEY=Google Cloud API KEY
 - 5- Well Done!
 
 # Installation for older Laravel 
-## Please expect more digging to get it work if you are planning to go down to 4.
+### You may expect more debugging to get it working.
 
-- 1- Go to your laravel project root directory and get the package locally:-
+- 1- Go to your laravel project root directory and install the package locally:-
 ```php
-composer require "googletran/translate"
+composer require "gtran/translate"
 ```
 
-- 2- Add GoogleTran service provider manually into config/app.php:-
+- 2- Add GTran service provider manually to the providers list in config/app.php:-
 ```php
 'providers' => [
     // ...
-    GoogleTran\Translate\\GoogleTranServiceProvider::class,
+    GTran\Translate\\GTranServiceProvider::class,
 ]
 ```
 
 - 3- Load config as well as routes references:-
 ```php
-php artisan vendor:publish --force --provider="GoogleTran\Translate\GoogleTranServiceProvider"
+php artisan vendor:publish --force --provider="GTran\Translate\GTranServiceProvider"
 ```
 
 - 4- Go to env file and include at the bottom:-
@@ -156,23 +157,24 @@ locale   en
 
 # Usage
 
-### Import Use at the top in any of your laravel project controllers
+### Import Use at the top in any of your laravel project controllers / traits.
 ```php
-use GoogleTran;
+use GTran;
 ```
 
 ### Access functions through 
 
 ```php
-GoogleTran::detectTextInformation($query);
+GTran::detectTextInformation($query);
 ```
 
 ## Available functions
 
-- detectTextInformation($query,$concat = false,$concatType = false) (Returns detections object)
-- translateText($query,$target,$source,$format,$model,$concat = false,$concatType = false) (Returns translations object)
-- translationsAvailable($model,$locale) (Returns languages object)
+- detectTextInformation($query,$concat = false,$concatType = false)
+- translateTextWithoutConcat($queries, $target, $source, $format, $model)
+- translateText($query,$target,$source,$format,$model,$concat = false,$concatType = false)
+- translationsAvailable($model,$locale)
 
 ## About
 
-The AzureTran package was published under The Unlicense licence. If you have any problems, please feel free to reach out at hello@princez.uk.
+The GTran package was published under The Unlicense licence. If you have any problems, please feel free to reach out at hi@zakaria.website.

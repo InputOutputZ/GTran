@@ -1,8 +1,8 @@
 <?php
 
-namespace GoogleTran\Translate;
+namespace GTran\Translate;
 
-class GoogleTranHelpers {
+class GTranHelpers {
 
 	const MAX_LEVEL = 5;
 

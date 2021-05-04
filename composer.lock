@@ -1,9 +1,14 @@
 {
+    "_readme": [
+        "This file locks the dependencies of your project to a known state",
+        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
+        "This file is @generated automatically"
+    ],
+    "content-hash": "4f1bdd3be721a604868439011473b2d0",
     "packages": [
         {
             "name": "guzzlehttp/guzzle",
             "version": "7.3.0",
-            "version_normalized": "7.3.0.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/guzzle/guzzle.git",
@@ -37,14 +42,12 @@
                 "ext-intl": "Required for Internationalized Domain Name (IDN) support",
                 "psr/log": "Required for using the Log middleware"
             },
-            "time": "2021-03-23T11:33:13+00:00",
             "type": "library",
             "extra": {
                 "branch-alias": {
                     "dev-master": "7.3-dev"
                 }
             },
-            "installation-source": "dist",
             "autoload": {
                 "psr-4": {
                     "GuzzleHttp\\": "src/"
@@ -104,12 +107,11 @@
                     "type": "github"
                 }
             ],
-            "install-path": "../guzzlehttp/guzzle"
+            "time": "2021-03-23T11:33:13+00:00"
         },
         {
             "name": "guzzlehttp/promises",
             "version": "1.4.1",
-            "version_normalized": "1.4.1.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/guzzle/promises.git",
@@ -127,14 +129,12 @@
             "require-dev": {
                 "symfony/phpunit-bridge": "^4.4 || ^5.1"
             },
-            "time": "2021-03-07T09:25:29+00:00",
             "type": "library",
             "extra": {
                 "branch-alias": {
                     "dev-master": "1.4-dev"
                 }
             },
-            "installation-source": "dist",
             "autoload": {
                 "psr-4": {
                     "GuzzleHttp\\Promise\\": "src/"
@@ -162,12 +162,11 @@
                 "issues": "https://github.com/guzzle/promises/issues",
                 "source": "https://github.com/guzzle/promises/tree/1.4.1"
             },
-            "install-path": "../guzzlehttp/promises"
+            "time": "2021-03-07T09:25:29+00:00"
         },
         {
             "name": "guzzlehttp/psr7",
             "version": "1.8.2",
-            "version_normalized": "1.8.2.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/guzzle/psr7.git",
@@ -194,14 +193,12 @@
             "suggest": {
                 "laminas/laminas-httphandlerrunner": "Emit PSR-7 responses"
             },
-            "time": "2021-04-26T09:17:50+00:00",
             "type": "library",
             "extra": {
                 "branch-alias": {
                     "dev-master": "1.7-dev"
                 }
             },
-            "installation-source": "dist",
             "autoload": {
                 "psr-4": {
                     "GuzzleHttp\\Psr7\\": "src/"
@@ -240,12 +237,11 @@
                 "issues": "https://github.com/guzzle/psr7/issues",
                 "source": "https://github.com/guzzle/psr7/tree/1.8.2"
             },
-            "install-path": "../guzzlehttp/psr7"
+            "time": "2021-04-26T09:17:50+00:00"
         },
         {
             "name": "psr/http-client",
             "version": "1.0.1",
-            "version_normalized": "1.0.1.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/php-fig/http-client.git",
@@ -261,14 +257,12 @@
                 "php": "^7.0 || ^8.0",
                 "psr/http-message": "^1.0"
             },
-            "time": "2020-06-29T06:28:15+00:00",
             "type": "library",
             "extra": {
                 "branch-alias": {
                     "dev-master": "1.0.x-dev"
                 }
             },
-            "installation-source": "dist",
             "autoload": {
                 "psr-4": {
                     "Psr\\Http\\Client\\": "src/"
@@ -295,12 +289,11 @@
             "support": {
                 "source": "https://github.com/php-fig/http-client/tree/master"
             },
-            "install-path": "../psr/http-client"
+            "time": "2020-06-29T06:28:15+00:00"
         },
         {
             "name": "psr/http-message",
             "version": "1.0.1",
-            "version_normalized": "1.0.1.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/php-fig/http-message.git",
@@ -315,14 +308,12 @@
             "require": {
                 "php": ">=5.3.0"
             },
-            "time": "2016-08-06T14:39:51+00:00",
             "type": "library",
             "extra": {
                 "branch-alias": {
                     "dev-master": "1.0.x-dev"
                 }
             },
-            "installation-source": "dist",
             "autoload": {
                 "psr-4": {
                     "Psr\\Http\\Message\\": "src/"
@@ -351,12 +342,11 @@
             "support": {
                 "source": "https://github.com/php-fig/http-message/tree/master"
             },
-            "install-path": "../psr/http-message"
+            "time": "2016-08-06T14:39:51+00:00"
         },
         {
             "name": "ralouphie/getallheaders",
             "version": "3.0.3",
-            "version_normalized": "3.0.3.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/ralouphie/getallheaders.git",
@@ -375,9 +365,7 @@
                 "php-coveralls/php-coveralls": "^2.1",
                 "phpunit/phpunit": "^5 || ^6.5"
             },
-            "time": "2019-03-08T08:55:37+00:00",
             "type": "library",
-            "installation-source": "dist",
             "autoload": {
                 "files": [
                     "src/getallheaders.php"
@@ -398,9 +386,16 @@
                 "issues": "https://github.com/ralouphie/getallheaders/issues",
                 "source": "https://github.com/ralouphie/getallheaders/tree/develop"
             },
-            "install-path": "../ralouphie/getallheaders"
+            "time": "2019-03-08T08:55:37+00:00"
         }
     ],
-    "dev": true,
-    "dev-package-names": []
+    "packages-dev": [],
+    "aliases": [],
+    "minimum-stability": "stable",
+    "stability-flags": [],
+    "prefer-stable": false,
+    "prefer-lowest": false,
+    "platform": [],
+    "platform-dev": [],
+    "plugin-api-version": "2.0.0"
 }
